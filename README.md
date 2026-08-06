@@ -10,3 +10,5 @@
 4.myapp4 : 방명록 +  markdown파일 / Guestbook + Markdown file
 
 5.myapp5 : 소셜로그인 / Social Login (github)
+
+5.myapp6 : 방명록 +  SQLite / Guestbook + SQLite
