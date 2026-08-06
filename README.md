@@ -11,4 +11,4 @@
 
 5.myapp5 : 소셜로그인 / Social Login (github)
 
-5.myapp6 : 방명록 +  SQLite / Guestbook + SQLite
+6.myapp6 : 방명록 +  SQLite / Guestbook + SQLite
