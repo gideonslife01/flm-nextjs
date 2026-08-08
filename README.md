@@ -11,6 +11,8 @@
 
 5.myapp5 : 소셜로그인 / Social Login (github)
 
-6.myapp6 : 방명록 +  SQLite / Guestbook + SQLite
+6.myapp6 : 방명록 + SQLite / Guestbook + SQLite
 
-7.myapp7 : 방명록 +  SQLite + NextAuth / Guestbook + SQLite + NextAuth
+7.myapp7 : 방명록 + SQLite + NextAuth / Guestbook + SQLite + NextAuth
+
+8.myapp8 : 방명록 + NextAuth + ServerAction / Guestbook + NextAuth + ServerAction 
