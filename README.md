@@ -16,3 +16,5 @@
 7.myapp7 : 방명록 + SQLite + NextAuth / Guestbook + SQLite + NextAuth
 
 8.myapp8 : 방명록 + NextAuth + ServerAction / Guestbook + NextAuth + ServerAction 
+
+9.myapp9 : Gotosocial + NextAuth
