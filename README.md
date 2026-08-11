@@ -18,3 +18,5 @@
 8.myapp8 : 방명록 + NextAuth + ServerAction / Guestbook + NextAuth + ServerAction 
 
 9.myapp9 : Gotosocial + NextAuth
+
+10.myapp10 : Gotosocial + CRUD
