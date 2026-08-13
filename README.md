@@ -20,3 +20,5 @@
 9.myapp9 : Gotosocial + NextAuth
 
 10.myapp10 : Gotosocial + CRUD
+
+11.myapp11 : SNS Server-1(API CRUD)
