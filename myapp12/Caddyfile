@@ -1,0 +1,3 @@
+yourhost.domain.org {
+	reverse_proxy localhost:3000
+}
