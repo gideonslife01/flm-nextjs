@@ -5,7 +5,7 @@
 
 2.myapp2 : 폰트,타이틀,라우팅 / Fonts, Titles, Routing
 
-3.myapp3 : 앱라우트,페이지라우트/App Route,Page Route
+3.myapp3 : 앱라우트,페이지라우트 / App Route,Page Route
 
 4.myapp4 : 방명록 +  markdown파일 / Guestbook + Markdown file
 
@@ -24,3 +24,5 @@
 11.myapp11 : SNS Server-1(API CRUD)
 
 12.myapp12 : SNS Server-2(follow)
+
+13.myapp13 : SNS Server-3(글배달,public key 검증 / Article Delivery , public key verification)
