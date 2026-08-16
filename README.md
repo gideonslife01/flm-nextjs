@@ -26,3 +26,5 @@
 12.myapp12 : SNS Server-2(follow)
 
 13.myapp13 : SNS Server-3(글배달,public key 검증 / Article Delivery , public key verification)
+
+14.myapp14 : SNS Server-4(글배달 역방향 /Reverse direction of text delivery)
