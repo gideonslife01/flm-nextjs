@@ -23,10 +23,12 @@
 
 11.myapp11 : SNS Server-1(API CRUD)
 
-12.myapp12 : SNS Server-2(follow)
+12.myapp12 : SNS Server-2(follow,webfinger)
 
 13.myapp13 : SNS Server-3(글배달,public key 검증 / Article Delivery , public key verification)
 
 14.myapp14 : SNS Server-4(글배달 역방향 /Reverse direction of text delivery)
 
 15.myapp15 : SNS Server-5(팔로워 목록 / A list of followers)
+
+16.myapp16 : SNS Server-6(Webfinger Update)
