@@ -34,3 +34,7 @@
 16.myapp16 : SNS Server-6(Webfinger Update)
 
 17.myapp17 : SNS Server-7(팔로잉 목록 / following list)
+
+18.myapp18 : SNS Server-8(타임라인,개별글 확인 / timeline, check individual posts)
+
+
