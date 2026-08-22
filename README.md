@@ -23,9 +23,9 @@
 
 11.myapp11 : SNS Server-1(API CRUD)
 
-12.myapp12 : SNS Server-2(follow,webfinger)
+12.myapp12 : SNS Server-2(Follow,webfinger)
 
-13.myapp13 : SNS Server-3(글배달,public key 검증 / Article Delivery , public key verification)
+13.myapp13 : SNS Server-3(글배달,Public key 검증 / Article Delivery , Public key verification)
 
 14.myapp14 : SNS Server-4(글배달 역방향 / Reverse direction of text delivery)
 
@@ -33,8 +33,10 @@
 
 16.myapp16 : SNS Server-6(Webfinger Update)
 
-17.myapp17 : SNS Server-7(팔로잉 목록 / following list)
+17.myapp17 : SNS Server-7(팔로잉 목록 / Following list)
 
-18.myapp18 : SNS Server-8(타임라인,개별글 확인 / timeline, check individual posts)
+18.myapp18 : SNS Server-8(타임라인,개별글 확인 / Timeline, Check individual posts)
+
+19.myapp19 : SNS Server-9(타임라인 Actor, @userid / Timeline Actor, @userid)
 
 
