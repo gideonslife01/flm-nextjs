@@ -39,4 +39,6 @@
 
 19.myapp19 : SNS Server-9(타임라인 Actor, @userid / Timeline Actor, @userid)
 
+20.myapp20 : SNS Server-10(inbox_posts id 수정 / Modify inbox_posts id)
+
 
