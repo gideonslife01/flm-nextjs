@@ -41,4 +41,10 @@
 
 20.myapp20 : SNS Server-10(inbox_posts id 수정 / Modify inbox_posts id)
 
+21.myapp21 : SNS Server-11
+(사용자가 두번 입력되는 문제를 수정 / 
+Fixed an issue where user input was registered twice.)
 
+22.myapp22 : SNS Server-12
+(팔로잉과 팔로워가 테이블에 저장되지 않는 문제를 수정 / 
+Fixed an issue where following and follower data were not being saved to the table.)
