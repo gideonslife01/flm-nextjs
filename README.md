@@ -48,3 +48,5 @@ Fixed an issue where user input was registered twice.)
 22.myapp22 : SNS Server-12
 (팔로잉과 팔로워가 테이블에 저장되지 않는 문제를 수정 / 
 Fixed an issue where following and follower data were not being saved to the table.)
+
+23.myapp23 : SNS Server-13(좋아요 / likes)
