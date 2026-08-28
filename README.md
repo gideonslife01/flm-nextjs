@@ -52,3 +52,5 @@ Fixed an issue where following and follower data were not being saved to the tab
 23.myapp23 : SNS Server-13(좋아요 / likes)
 
 24.myapp24 : SNS Server-14(Boost / 부스트)
+
+25.myapp25 : SNS Server-15(Boost Delivery / 부스트 배달)
