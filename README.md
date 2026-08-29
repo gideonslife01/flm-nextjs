@@ -54,3 +54,5 @@ Fixed an issue where following and follower data were not being saved to the tab
 24.myapp24 : SNS Server-14(Boost / 부스트)
 
 25.myapp25 : SNS Server-15(Boost Delivery / 부스트 배달)
+
+26.myapp26 : SNS Server-16(Theme / 테마)
