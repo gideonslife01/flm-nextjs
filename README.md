@@ -49,10 +49,12 @@ Fixed an issue where user input was registered twice.)
 (팔로잉과 팔로워가 테이블에 저장되지 않는 문제를 수정 / 
 Fixed an issue where following and follower data were not being saved to the table.)
 
-23.myapp23 : SNS Server-13(좋아요 / likes)
+23.myapp23 : SNS Server-13(likes / 좋아요)
 
-24.myapp24 : SNS Server-14(Boost / 부스트)
+24.myapp24 : SNS Server-14(부스트 / Boost)
 
-25.myapp25 : SNS Server-15(Boost Delivery / 부스트 배달)
+25.myapp25 : SNS Server-15(부스트 배달 / Boost Delivery)
 
-26.myapp26 : SNS Server-16(Theme / 테마)
+26.myapp26 : SNS Server-16(테마 / Theme)
+
+27.myapp27 : SNS Server-17(테마 실시간 변경 / Real-time theme switching)
