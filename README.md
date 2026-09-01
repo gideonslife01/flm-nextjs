@@ -60,3 +60,5 @@ Fixed an issue where following and follower data were not being saved to the tab
 27.myapp27 : SNS Server-17(테마 실시간 변경 / Real-time theme switching)
 
 28.myapp28 : SNS Server-18(부스트 버튼 추가 / Add Boost button)
+
+29.myapp29 : SNS Server-19(좋아요 버튼 추가 / Add a Like button)
