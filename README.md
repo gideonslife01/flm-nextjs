@@ -62,3 +62,5 @@ Fixed an issue where following and follower data were not being saved to the tab
 28.myapp28 : SNS Server-18(부스트 버튼 추가 / Add Boost button)
 
 29.myapp29 : SNS Server-19(좋아요 버튼 추가 / Add a Like button)
+
+30.myapp30 : SNS Server-20(연방 글 삭제 / Delete Federation Post)
