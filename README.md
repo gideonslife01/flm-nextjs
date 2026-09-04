@@ -64,3 +64,6 @@ Fixed an issue where following and follower data were not being saved to the tab
 29.myapp29 : SNS Server-19(좋아요 버튼 추가 / Add a Like button)
 
 30.myapp30 : SNS Server-20(연방 글 삭제 / Delete Federation Post)
+
+31.myapp31 : SNS Server-21(회원관리, inbox public key 검증 / Member management, inbox public key verification)
+
