@@ -1,6 +1,7 @@
 //✅ myapp31 - app/users/[username]/inbox/route.ts
 import db from '@/lib/db';
-import { sendAccept, verifyHttpSignature, fetchActorPublicKey } from '@/lib/ap';
+//import { sendAccept, verifyHttpSignature, fetchActorPublicKey, fetchActorPublicKeyWithRetry } from '@/lib/ap';
+import { sendAccept, verifyHttpSignature, fetchActorPublicKey, fetchActorPublicKeyWithRetry } from '@/lib/ap';
 import crypto from 'crypto';
 
 const DOMAIN = process.env.DOMAIN || 'aloy-horizon.duckdns.org'; 
@@ -20,14 +21,14 @@ export async function POST(req: Request, { params }: { params: Promise<{ usernam
       return new Response('', { status: 202 });
     }
 
-   // const body = await req.json();
+    // const body = await req.json();
     console.log(`📩 [${username}] INBOX:`, body.type, body.actor, body.id);
 
     // ✅ myapp31 -  HTTP Signature 검증!  / HTTP Signature Verification! (Crucial!)
     try {
       const actorIdForVerify = typeof body.actor === 'string' ? body.actor : body.actor?.id;
 
-      // ✅ Delete요청은 계정 삭제 알림 / A delete request is a notification for account deletion.
+      // Delete요청은 계정 삭제 알림 / A delete request is a notification for account deletion.
       // Delete 요청시는 키 검증 스킵 / Skip key validation for DELETE requests.
       if (body.type === 'Delete') {
         console.log(`🗑 Delete는 검증 스킵! / Skip validation for Delete! ${actorIdForVerify}`);
@@ -37,8 +38,9 @@ export async function POST(req: Request, { params }: { params: Promise<{ usernam
       } else {
         console.log(`🔍 test username: ${username}`);
 
-        // - Actor에서 publicKey 가져오기! / Fetch publicKey from Actor!
-        const publicKeyPem = await fetchActorPublicKey(actorIdForVerify, username);
+        // ❗️ fetchActorPublicKeyWithRetry에 포함됨 / Included in fetchActorPublicKeyWithRetry
+        // - Actor에서 publicKey 가져오기! / Fetch publicKey from Actor! ->>
+        // const publicKeyPem = await fetchActorPublicKey(actorIdForVerify, username);
         
         // - Digest 검증! (body 위조 방지!) / Verify Digest! (prevent body tampering!)
         const expectedDigest = `SHA-256=${crypto.createHash('sha256').update(rawBody).digest('base64')}`;
@@ -71,7 +73,16 @@ export async function POST(req: Request, { params }: { params: Promise<{ usernam
           headers: req.headers,
           body: rawBody
         });
-        const isValid = await verifyHttpSignature(verifyReq, publicKeyPem);
+        // ❗️ fetchActorPublicKeyWithRetry에 포함됨 / Included in fetchActorPublicKeyWithRetry
+        // const isValid = await verifyHttpSignature(verifyReq, publicKeyPem); 
+
+        // ✅ myapp32 - 캐싱 + 재시도! / Caching + Retry!
+        const { isValid } = await fetchActorPublicKeyWithRetry(
+            actorIdForVerify, 
+            username, 
+            verifyReq
+        );
+        
         
         if (!isValid) {
           console.error(`❌ [${username}] 서명 검증 실패! 사칭 의심! / Signature verification failed! Suspected impersonation! actor: ${actorIdForVerify}`);
