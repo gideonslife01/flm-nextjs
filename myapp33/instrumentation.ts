@@ -6,4 +6,4 @@ export async function register() {
     watchThemes(); 
     console.log('👀 Theme watcher started in background');
   }
-}
+} 
