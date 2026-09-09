@@ -72,3 +72,5 @@ freelifemakers.org
 34) myapp34 - SNS Server-24(myapp34)
 
 35) myapp35 - SNS Server-25(myapp35)
+
+36) myapp36 - SNS Server-26(myapp36)
