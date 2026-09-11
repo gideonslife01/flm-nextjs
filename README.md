@@ -76,3 +76,5 @@ https://freelifemakers.org
 36) myapp36 - SNS Server-26(myapp36)
 
 37) myapp37 - SNS Server-27(myapp37)
+
+38) myapp38 - SNS Server-28(myapp38)
