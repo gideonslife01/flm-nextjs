@@ -10,4 +10,4 @@ aloy-horizon.duckdns.org {
  
   # CORS는! Next.js가! 처리!하니까! Caddy에서! 헤더! 추가! 금지!
   # Next.js handles CORS, so do not add headers in Caddy!
-}
+}. 
