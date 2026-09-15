@@ -1,7 +1,7 @@
 
 ✅ flm-nextjs
 
-https://freelifemakers.org
+https://freelifemakers.org/wordpress
 
 1) myapp  - 프로젝트 시작 / Project Start
 
