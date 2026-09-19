@@ -67,3 +67,23 @@ myapp31 - SNS Server-21(myapp31)
 myapp32 - SNS Server-22(myapp32)
 
 myapp33 - SNS Server-23(myapp33)
+
+myapp34 - SNS Server-24(myapp34)
+
+myapp35 - SNS Server-25(myapp35)
+
+myapp36 - SNS Server-26(myapp36)
+
+myapp37 - SNS Server-27(myapp37)
+
+myapp38 - SNS Server-28(myapp38)
+
+myapp39 - SNS Server-29(myapp39)
+
+myapp40 - SNS Server-30(myapp40)
+
+myapp41 - SNS Server-31(myapp41)
+
+myapp42 - SNS Server-32(myapp42)
+
+myapp43 - SNS Server-33(myapp33)
