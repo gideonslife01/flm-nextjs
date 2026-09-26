@@ -97,3 +97,5 @@ myapp46 - SNS Server-36(myapp46)
 myapp47 - SNS Server-37(myapp47)
 
 myapp48 - SNS Server-38(myapp48)
+
+myapp49 - SNS Server-39(myapp49)
