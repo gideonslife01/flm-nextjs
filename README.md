@@ -2,7 +2,7 @@
 
 https://freelifemakers.org/wordpress
 
-- Nexjs16 + tailwind : https://www.freelifemakers.org/wordpress/index.php/2026/09/03/nextjs-project-summary/
+Nexjs16 + tailwind : https://www.freelifemakers.org/wordpress/index.php/2026/09/03/nextjs-project-summary/
 
 myapp - 프로젝트 시작 / Project Start(myapp)
 
@@ -119,3 +119,5 @@ myapp56 - SNS Server-46(myapp56)
 myapp57 - SNS Server-47(myapp57)
 
 myapp58 - SNS Server-48(myapp58)
+
+myapp59 - SNS Server-49(myapp59)
