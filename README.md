@@ -121,3 +121,5 @@ myapp57 - SNS Server-47(myapp57)
 myapp58 - SNS Server-48(myapp58)
 
 myapp59 - SNS Server-49(myapp59)
+
+myapp60 - SNS Server-50(myapp60)
