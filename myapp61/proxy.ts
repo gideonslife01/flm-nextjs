@@ -1,6 +1,6 @@
 // ✅ myapp42/middleware.ts 
 // ✅ myapp58 - middleware.ts 에서 proxy.ts로 이름 변경 / Renamed from middleware.ts to proxy.ts.(Nextjs 16)
-// - CORS설정, 모든 앱 허용 / CORS configuration: Allow all apps
+// - CORS설정, 모든 앱 허용 / CORS configuration: Allow all apps.  
 
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
