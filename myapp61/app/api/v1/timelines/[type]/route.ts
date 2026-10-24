@@ -1,5 +1,5 @@
 // app/api/v1/timelines/[type]/route.ts
-// ✅ myapp59 + myapp60 + myapp60+
+// ✅ myapp59 + myapp60
 // - 커서 페이지네이션 / CursonPagination
 
 import { NextRequest, NextResponse } from 'next/server';
@@ -21,42 +21,112 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ type
   const max_id = searchParams.get('max_id');
   const isLocal = searchParams.get('local') === 'true';
 
-  const viewer = getViewerFromRequest(req as any);
+  const viewer = getViewerFromRequest(req as any); //cookie user ,viwer == username
+  const targetUsername = searchParams.get('paramsusername'); // @username
 
   if (type === 'home' && !viewer) {
     return NextResponse.json([], { headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' } });
   }
 
-  // ✅ 공통 데이터 수집 / Common Data Collection
+   // console.log(`---${targetUsername}`)
+
+   // ✅ 공통 데이터 수집 / Common Data Collection
   let filteredRows: any[] = [];
 
-  if (type === 'home') {
-    // ✅ myapp61+ - LIMIT 200 추가 / Add LIMIT 200
-    const myPosts = db.prepare(`SELECT * FROM posts WHERE username =? LIMIT 200`).all(viewer) as any[];
-    const inboxPosts = db.prepare(`SELECT * FROM inbox_posts WHERE username =? LIMIT 200`).all(viewer) as any[];
-    const rawRows = [...myPosts, ...inboxPosts];
-    filteredRows = rawRows.filter((p: any) => {
-      const vis = p.visibility || 'public';
-      if (vis === 'public') return true;
-      if (vis === 'unlisted') return true;
-      if (vis === 'private') return canSee(viewer, p);
-      return true;
-    });
-    if (filteredRows.length === 0) {
-      filteredRows = db.prepare(`SELECT * FROM posts WHERE visibility IN ('public','unlisted') ORDER BY created_at DESC LIMIT 100`).all() as any[];
-    }
-  } else if (type === 'public') {
+//   if (type === 'home') {
+//     // ✅ myapp61+ - LIMIT 200 추가 / Add LIMIT 200
+//     const myPosts = db.prepare(`SELECT * FROM posts WHERE username =? LIMIT 200`).all(viewer) as any[];
+//     const inboxPosts = db.prepare(`SELECT * FROM inbox_posts WHERE username =? LIMIT 200`).all(viewer) as any[];
 
-    // public - local ? 내 서버만 : 전체
-    // public - local ? My server only : Everyone
-    filteredRows = db.prepare(`SELECT * FROM posts WHERE visibility IN ('public','unlisted') ORDER BY created_at DESC LIMIT 200`).all() as any[];
-    if (!isLocal) {
-      const inbox = db.prepare(`SELECT * FROM inbox_posts WHERE visibility IN ('public','unlisted') ORDER BY created_at DESC LIMIT 200`).all() as any[];
-      filteredRows = [...filteredRows, ...inbox];
-    }
+//     const rawRows = [...myPosts, ...inboxPosts];
+//     filteredRows = rawRows.filter((p: any) => {
+//       const vis = p.visibility || 'public';
+//       if (vis === 'public') return true;
+//       if (vis === 'unlisted') return true;
+//       if (vis === 'private') return canSee(viewer, p);
+//       return true;
+//     });
+//     if (filteredRows.length === 0) {
+//       filteredRows = db.prepare(`SELECT * FROM posts WHERE username=? and visibility IN ('public','unlisted') ORDER BY created_at DESC LIMIT 100`).all() as any[];
+//     // filteredRows = db.prepare(`SELECT * FROM posts WHERE visibility IN ('public','unlisted') ORDER BY created_at DESC LIMIT 100`).all() as any[];
+//     }
+//   } else if (type === 'public') {
+
+//     // public - local ? 내 서버만 : 전체
+//     // public - local ? My server only : Everyone
+
+//     // ✅ myapp61+
+//     //filteredRows = db.prepare(`SELECT * FROM posts WHERE visibility IN ('public','unlisted') ORDER BY created_at DESC LIMIT 200`).all() as any[];
+//     filteredRows = db.prepare(`SELECT * FROM posts WHERE username=? and visibility IN ('public','unlisted') ORDER BY created_at DESC LIMIT 200`).all(viewer) as any[];
+//     if (!isLocal) {
+//         const inbox = db.prepare(`SELECT * FROM inbox_posts WHERE visibility IN ('public','unlisted') ORDER BY created_at DESC LIMIT 200`).all(viewer) as any[];
+// //      const inbox = db.prepare(`SELECT * FROM inbox_posts WHERE visibility IN ('public','unlisted') ORDER BY created_at DESC LIMIT 200`).all() as any[];
+//       filteredRows = [...filteredRows, ...inbox];
+//     }
+//   } else {
+//     return NextResponse.json([], { headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' } });
+//   }
+
+//console.log(`----Type: ${type}, target:${targetUsername}, viewer:${viewer}, local:${isLocal}`);
+// ✅ myapp61+
+// console.log(`----Type: ${type}, target:${targetUsername}, viewer:${viewer}, local:${isLocal}`);
+
+// ✅ myapp61+
+if (type === 'home' && !viewer && !targetUsername) {
+  return NextResponse.json([], { headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' } });
+}
+
+if (type === 'home') {
+  if (!targetUsername) {
+    filteredRows = []; // @userid 없으면 빈 배열 / Empty array if @userid is missing
   } else {
-    return NextResponse.json([], { headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' } });
+    let rows = db.prepare(
+      `SELECT * FROM posts WHERE username=? ORDER BY created_at DESC LIMIT 200`
+    ).all(targetUsername) as any[];
+
+    if (!viewer) {
+      // 로그인 하지 않은 경우 @userid형태로 접근시 public, unlisted만 보이게 설정
+      // If not logged in, restrict access via '@userid' to show only 'public' and 'unlisted' content
+      rows = rows.filter(r => ['public','unlisted'].includes(String(r.visibility||'public').trim().toLowerCase()));
+    } else if (viewer === targetUsername) {
+      // 본인인경우 전부 보이게 설정, 기존값 유지
+      // If it's the user themselves, set to show everything; maintain existing value
+    } else {
+      // 다른 사람인경우 public, unlisted , private는 canSee로 필터
+      // For other users, filter 'public', 'unlisted', and 'private' using 'canSee'
+      rows = rows.filter(r => {
+        const v = String(r.visibility||'public').trim().toLowerCase();
+        if (v === 'public' || v === 'unlisted') return true;
+        if (v === 'private') return canSee(viewer, r);
+        return false;
+      });
+    }
+    filteredRows = rows;
   }
+} else if (type === 'public') {
+  if (!targetUsername) {
+    filteredRows = []; // @userid 없으면 빈 배열 / Empty array if @userid is missing
+  } else {
+    let rows = db.prepare(
+      `SELECT * FROM posts WHERE username=? ORDER BY created_at DESC LIMIT 200`
+    ).all(targetUsername) as any[];
+
+    if (!viewer) {
+      rows = rows.filter(r => ['public','unlisted'].includes(String(r.visibility||'public').trim().toLowerCase()));
+    } else if (viewer === targetUsername) {
+      // 본인페이지예 로그인 한 경우
+      // When logged into one's own page
+    } else {
+      rows = rows.filter(r => {
+        const v = String(r.visibility||'public').trim().toLowerCase();
+        if (v === 'public' || v === 'unlisted') return true;
+        if (v === 'private') return canSee(viewer, r);
+        return false;
+      });
+    }
+    filteredRows = rows;
+  }
+}
 
   // ✅ 커서 필터 - max_id 이전 글만 / Cursor filter – posts prior to max_id only
   filteredRows.sort((a, b) => parseDate(b.created_at) - parseDate(a.created_at));

@@ -1,5 +1,5 @@
-// ✅ myapp40 - app/auth/login/page.tsx 
-// - httpOnly + refresh + Coreect Rendering error 
+// ✅ myapp40 - app/auth/login/page.tsx
+// - httpOnly + refresh + Coreect Rendering error
 
 'use client';
 import { useState, useEffect, Suspense } from 'react';
@@ -53,7 +53,7 @@ function LoginForm() {
 
       console.log('✅ 로그인 성공 / login success next:', next);
 
-      // - router.push 대신 window.location.href사용(렌더링 딜레이 때문에) 
+      // - router.push 대신 window.location.href사용(렌더링 딜레이 때문에)
       //  Use window.location.href instead of router.push (due to rendering delays).
       if (next && next !== '/') {
         if (next.startsWith('http')) {
@@ -62,6 +62,9 @@ function LoginForm() {
           window.location.href = next;
         }
       } else {
+        // ✅ myapp61+
+        // 지금은 proxy.ts에 next설정이 업어서 무조건 '/'라우트 실행됨
+        // Currently, there is no 'next' configuration in proxy.ts, so the '/' route is always executed.
         window.location.href = '/';
       }
     } catch (err) {
