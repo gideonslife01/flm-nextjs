@@ -1,0 +1,127 @@
+✅ flm-nextjs
+
+https://freelifemakers.org/wordpress
+
+Nexjs16 + tailwind : https://www.freelifemakers.org/wordpress/index.php/2026/09/03/nextjs-project-summary/
+
+myapp - 프로젝트 시작 / Project Start(myapp)
+
+myapp2 - 폰트,타이틀,라우팅 / Fonts, Titles, Routing(myapp2)
+
+myapp3 - 앱라우트,페이지라우트/App Route,Page Route(myapp3)
+
+myapp4 - 방명록 + markdown파일 / Guestbook + Markdown file(myapp4)
+
+myapp5 - 소셜로그인 / Social Login (github,myapp5)
+
+myapp6 - 방명록 + SQLite / Guestbook + SQLite(myapp6)
+
+myapp7 - 방명록 + sqlite+nextauth / guestbook + sqlite + nextauth(myapp7)
+
+myapp8 - 방명록 + nextauth + ServerAction / Guestbook + nextauth + ServerAction(myapp8)
+
+myapp9 - Gotosocial + NextAuth(myapp9)
+
+myapp10 - Gotosocial + CRUD(myapp10)
+
+myapp11 - SNS Server-1(API CRUD,myapp11)
+
+myapp12 - SNS Server-2(myapp12)
+
+myapp13 - SNS Server-3(myapp13)
+
+myapp14 - SNS Server-4(myapp14)
+
+myapp15 - SNS Server-5(myapp15)
+
+myapp16 - SNS Server-6(myapp16)
+
+myapp17 - SNS Server-7(myapp17)
+
+myapp18 - SNS Server-8(myapp18)
+
+myapp19 - SNS Server-9(myapp19)
+
+myapp20 - SNS Server-10(myapp20)
+
+myapp21 - SNS Server-11(myapp21)
+
+myapp22 - SNS Server-12(myapp22)
+
+myapp23 - SNS Server-13(myapp23)
+
+myapp24 - SNS Server-14(myapp24)
+
+myapp25 - SNS Server-15(myapp25)
+
+myapp26 - SNS Server-16(myapp26)
+
+myapp27 - SNS Server-17(myapp27)
+
+myapp28 - SNS Server-18(myapp28)
+
+myapp29 - SNS Server-19(myapp29)
+
+myapp30 - SNS Server-20(myapp30)
+
+myapp31 - SNS Server-21(myapp31)
+
+myapp32 - SNS Server-22(myapp32)
+
+myapp33 - SNS Server-23(myapp33)
+
+myapp34 - SNS Server-24(myapp34)
+
+myapp35 - SNS Server-25(myapp35)
+
+myapp36 - SNS Server-26(myapp36)
+
+myapp37 - SNS Server-27(myapp37)
+
+myapp38 - SNS Server-28(myapp38)
+
+myapp39 - SNS Server-29(myapp39)
+
+myapp40 - SNS Server-30(myapp40)
+
+myapp41 - SNS Server-31(myapp41)
+
+myapp42 - SNS Server-32(myapp42)
+
+myapp43 - SNS Server-33(myapp43)
+
+myapp44 - SNS Server-34(myapp44)
+
+myapp45 - SNS Server-35(myapp45)
+
+myapp46 - SNS Server-36(myapp46)
+
+myapp47 - SNS Server-37(myapp47)
+
+myapp48 - SNS Server-38(myapp48)
+
+myapp49 - SNS Server-39(myapp49)
+
+myapp50 - SNS Server-40(myapp50)
+
+myapp51 - SNS Server-41(myapp51)
+
+myapp52 - SNS Server-42(myapp52)
+
+myapp53 - SNS Server-43(myapp53)
+
+myapp54 - SNS Server-44(myapp54)
+
+myapp55 - SNS Server-45(myapp55)
+
+myapp56 - SNS Server-46(myapp56)
+
+myapp57 - SNS Server-47(myapp57)
+
+myapp58 - SNS Server-48(myapp58)
+
+myapp59 - SNS Server-49(myapp59)
+
+myapp60 - SNS Server-50(myapp60)
+
+myapp61 - SNS Server-51(myapp61) + myapp61+
