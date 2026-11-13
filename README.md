@@ -1,6 +1,6 @@
 ✅ flm-nextjs
 
-https:/ws.freelifemakers.org/
+https://ws.freelifemakers.org/
 
 📁 sns
 - myapp62 ~ myapp66
