@@ -1,0 +1,124 @@
+
+
+{
+  "id": "103270115826048975",
+  "created_at": "2019-12-08T03:48:33.901Z",
+  "in_reply_to_id": null,
+  "in_reply_to_account_id": null,
+  "sensitive": false,
+  "spoiler_text": "",
+  "visibility": "public",
+  "language": "en",
+  "uri": "https://mastodon.social/users/Gargron/statuses/103270115826048975",
+  "url": "https://mastodon.social/@Gargron/103270115826048975",
+  "replies_count": 5,
+  "reblogs_count": 6,
+  "favourites_count": 11,
+  "quotes_count": 2,
+  "favourited": false,
+  "reblogged": false,
+  "muted": false,
+  "bookmarked": false,
+  "content": "<p>&quot;I lost my inheritance with one wrong digit on my sort code&quot;</p><p><a href=\"https://www.theguardian.com/money/2019/dec/07/i-lost-my-193000-inheritance-with-one-wrong-digit-on-my-sort-code\" rel=\"nofollow noopener noreferrer\" target=\"_blank\"><span class=\"invisible\">https://www.</span><span class=\"ellipsis\">theguardian.com/money/2019/dec</span><span class=\"invisible\">/07/i-lost-my-193000-inheritance-with-one-wrong-digit-on-my-sort-code</span></a></p>",
+  "reblog": null,
+  "application": {
+    "name": "Web",
+    "website": null
+  },
+  "account": {
+    "id": "1",
+    "username": "Gargron",
+    "acct": "Gargron",
+    "display_name": "Eugen",
+    "locked": false,
+    "bot": false,
+    "discoverable": true,
+    "group": false,
+    "created_at": "2016-03-16T14:34:26.392Z",
+    "note": "<p>Developer of Mastodon and administrator of mastodon.social. I post service announcements, development updates, and personal stuff.</p>",
+    "url": "https://mastodon.social/@Gargron",
+    "avatar": "https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg",
+    "avatar_static": "https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg",
+    "header": "https://files.mastodon.social/accounts/headers/000/000/001/original/c91b871f294ea63e.png",
+    "header_static": "https://files.mastodon.social/accounts/headers/000/000/001/original/c91b871f294ea63e.png",
+    "followers_count": 322930,
+    "following_count": 459,
+    "statuses_count": 61323,
+    "last_status_at": "2019-12-10T08:14:44.811Z",
+    "emojis": [],
+    "fields": [
+      {
+        "name": "Patreon",
+        "value": "<a href=\"https://www.patreon.com/mastodon\" rel=\"me nofollow noopener noreferrer\" target=\"_blank\"><span class=\"invisible\">https://www.</span><span class=\"\">patreon.com/mastodon</span><span class=\"invisible\"></span></a>",
+        "verified_at": null
+      },
+      {
+        "name": "Homepage",
+        "value": "<a href=\"https://zeonfederated.com\" rel=\"me nofollow noopener noreferrer\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"\">zeonfederated.com</span><span class=\"invisible\"></span></a>",
+        "verified_at": "2019-07-15T18:29:57.191+00:00"
+      }
+    ]
+  },
+  "media_attachments": [],
+  "mentions": [],
+  "tags": [],
+  "emojis": [],
+  "quote": null,
+  "card": {
+    "url": "https://www.theguardian.com/money/2019/dec/07/i-lost-my-193000-inheritance-with-one-wrong-digit-on-my-sort-code",
+    "title": "‘I lost my £193,000 inheritance – with one wrong digit on my sort code’",
+    "description": "When Peter Teich’s money went to another Barclays customer, the bank offered £25 as a token gesture",
+    "type": "link",
+    "author_name": "",
+    "author_url": "",
+    "provider_name": "",
+    "provider_url": "",
+    "html": "",
+    "width": 0,
+    "height": 0,
+    "image": null,
+    "embed_url": ""
+  },
+  "poll": null,
+  "quote_approval": {
+    "automatic": [],
+    "manual": [],
+    "current_user": "automatic"
+  }
+}
+
+
+타임라인 API 공식 문서
+1. 타임라인 전체 개요
+https://docs.joinmastodon.org/methods/timelines/
+
+2. Home 타임라인
+https://docs.joinmastodon.org/methods/timelines/#home
+
+GET /api/v1/timelines/home
+인증 필수, 팔로우한 사람 + 내 글
+3. Public 타임라인
+https://docs.joinmastodon.org/methods/timelines/#public
+
+GET /api/v1/timelines/public
+local=true면 우리 서버 글만, false면 federated
+4. Status (글) 구조 - Tusky가 엄격하게 보는 부분
+https://docs.joinmastodon.org/entities/Status/
+
+id는 String이지만 숫자여야 함 (Tusky는 Long으로 파싱)
+account 필드 필수 구조
+5. Account 구조
+https://docs.joinmastodon.org/entities/Account/
+
+id도 숫자 문자열
+6. ActivityPub 쪽 (마스토돈 → 우리 배달)
+https://docs.joinmastodon.org/spec/activitypub/
+
+마스토돈이 우리를 차단하는 로직 여기 있다
+제일 중요한건 이거:
+
+Mastodon API는 id를 String으로 정의하지만, 모든 구현체는 Snowflake 숫자 ID를 사용한다. 문자 섞인 ID는 많은 클라이언트에서 파싱 실패한다.
+https://docs.joinmastodon.org/entities/Status/#id
+
+그래서 내가 mastodon_id 숫자만 쓰라고 한거다. 공식 문서에도 그렇게 나와있다.
+
