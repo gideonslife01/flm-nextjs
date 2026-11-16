@@ -12,3 +12,4 @@ https://ws.freelifemakers.org/
 - encrypt-keyfile
 - pagination-infinite-scroll-nodb
 - pagination-prev-next-nodb
+- pagination-number-nodb
